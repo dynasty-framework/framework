@@ -33,3 +33,4 @@ framework项目简介：
 
         test是引入中台的概念，test-reception属于前台controller，接收转发请求；test-server属于中台层，就是业务逻辑层，是controller与dao的中间层，应用身份既是消费者也是提供者；
             test-dao是数据库访问层，是test-server的服务提供者；但是目前test-server和test-dao都无法注册zookeeper中；2019-04-14
+            更新：test-server修改dubbo扫描包路径后成功注册到zookeeper中，既是消费者又是提供者，但是test-dao还是无法注册
