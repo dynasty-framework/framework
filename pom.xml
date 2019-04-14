@@ -21,6 +21,8 @@
         <module>portal-server</module>
         <module>portal-consumer</module>
         <module>test-server</module>
+        <module>test-dao</module>
+        <module>test-reception</module>
     </modules>
 <!-- ======= 子级项目 ======= -->
 

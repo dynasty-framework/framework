@@ -2,6 +2,9 @@ package cn.dynasty.zt.portal.consumer.controller;
 
 import cn.dynasty.zt.portal.model.Hello;
 import cn.dynasty.zt.portal.service.HelloService;
+import cn.dynasty.zt.test.dao.mapper.TestMapper;
+import cn.dynasty.zt.test.server.model.TestDO;
+import cn.dynasty.zt.test.server.service.TestService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +23,12 @@ public class HelloController {
     @Reference
     private HelloService helloService;
 
+    @Reference
+    private TestService testService;
+
+    @Reference
+    private TestMapper testMapper;
+
 
     @RequestMapping(value = "/sayHello", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     /*@RequestBody
@@ -34,4 +43,16 @@ public class HelloController {
         return helloService.sayHello(hello);
     }
 
+
+    @RequestMapping(value = "/getData", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String getData(@RequestBody TestDO test) {
+        return testService.getData(test);
+    }
+
+    @RequestMapping(value = "/getData22", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String getData22(@RequestBody TestDO test) {
+        return testMapper.getData(test);
+    }
 }

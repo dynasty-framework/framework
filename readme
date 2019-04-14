@@ -1,0 +1,35 @@
+framework项目简介：
+    1、整体架构
+        SpringBoot
+            spring-boot-starter-parent2.0.3
+
+        dubbo-spring-boot-starter0.2.0
+            dubbo2.6.2、zookeeper3.4.9、
+
+        pagehelper-spring-boot-starter1.2.7（mybatis分页jar包，其中包含mybatis依赖）
+            mybatis3.4.6、 mybatis-spring1.3.2
+
+        数据库MySQL
+            mysql-connector-java5.1.46
+
+        连接池
+            druid-spring-boot-starter1.1.9
+
+
+    2，功能组件
+        注册中心
+            zookeeper3.4.6
+
+        分布式服务框架
+            dubbo
+
+        日志（还未添加）
+
+
+
+
+    3，各模块说明
+        portal是标准的dubbo服务消费者和服务提供者的2个应用；
+
+        test是引入中台的概念，test-reception属于前台controller，接收转发请求；test-server属于中台层，就是业务逻辑层，是controller与dao的中间层，应用身份既是消费者也是提供者；
+            test-dao是数据库访问层，是test-server的服务提供者；但是目前test-server和test-dao都无法注册zookeeper中；2019-04-14

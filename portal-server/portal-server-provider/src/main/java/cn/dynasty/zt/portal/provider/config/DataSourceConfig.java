@@ -17,6 +17,10 @@ import java.sql.SQLException;
  * @author zt
  * @date 2019年4月12日 16:21:33
  */
+/**
+ * @Author zhaotao
+ *  测试搭建数据库连接时，
+ **/
 @Configuration
 @MapperScan(basePackages="cn.dynasty.zt.portal.provider.mapper", sqlSessionTemplateRef="sqlSessionTemplate")
 public class DataSourceConfig {
