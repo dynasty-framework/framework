@@ -1,6 +1,7 @@
 package cn.dynasty.zt.test.server.service;
 
 
+import cn.dynasty.zt.portal.model.Hello;
 import cn.dynasty.zt.test.server.model.TestDO;
 
 /*
@@ -13,5 +14,7 @@ import cn.dynasty.zt.test.server.model.TestDO;
 public interface TestService {
 
     String getData(TestDO test);
+
+    String sayHello(Hello hello);
 
 }

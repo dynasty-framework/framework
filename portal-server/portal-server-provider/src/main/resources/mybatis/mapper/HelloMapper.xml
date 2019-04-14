@@ -5,11 +5,11 @@
 
     <select id="sayHello" resultType="Hello" parameterType="Hello" >
         select
-          real_name as msg
+          nick_name as msg
         from
-          sys_user
+          user
         where
-          user_uuid = '10000_00005461'
+          id = '1'
     </select>
 
 	
