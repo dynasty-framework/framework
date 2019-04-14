@@ -34,3 +34,8 @@ framework项目简介：
         test是引入中台的概念，test-reception属于前台controller，接收转发请求；test-server属于中台层，就是业务逻辑层，是controller与dao的中间层，应用身份既是消费者也是提供者；
             test-dao是数据库访问层，是test-server的服务提供者；但是目前test-server和test-dao都无法注册zookeeper中；2019-04-14
             更新：test-server修改dubbo扫描包路径后成功注册到zookeeper中，既是消费者又是提供者，但是test-dao还是无法注册
+
+            更新：2019-04-14 22:00 测试test-reception前台、test-server中台、调用portal-server后台可以实现一次完成的请求和响应；但是直接注入portal-provider中mybatis的mapper接口时注入失败；
+                    dubbo能否注入一个没有实现类的接口？
+
+            更新：will not be managed by Spring发现druid连接池创建连接未使用spring进行管理
