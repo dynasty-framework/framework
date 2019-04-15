@@ -3,6 +3,7 @@ package cn.dynasty.zt.portal.consumer.controller;
 import cn.dynasty.zt.portal.model.Hello;
 import cn.dynasty.zt.portal.service.HelloService;
 import com.alibaba.dubbo.config.annotation.Reference;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  **/
 @RestController
 @RequestMapping("/hello")
+@Slf4j
 public class HelloController {
 
 
@@ -31,6 +33,7 @@ public class HelloController {
         作用：
             该注解用于将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区。*/
     public String sayHello(@RequestBody Hello hello) {
+        log.info("aaa");
         return helloService.sayHello(hello);
     }
 
