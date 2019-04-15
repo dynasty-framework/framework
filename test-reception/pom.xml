@@ -26,9 +26,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
+
+
         <dependency>
             <groupId>cn.dynasty.zt</groupId>
-            <artifactId>test-api</artifactId>
+            <artifactId>test-server</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

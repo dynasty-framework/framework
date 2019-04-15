@@ -37,13 +37,9 @@
 		<typeAlias alias="AyyayList" type="java.util.ArrayList" />
 
 		<!--实体类别名-->
-		<typeAlias alias="Test" type="cn.dynasty.zt.test.server.model.TestDO" />
+		<typeAlias alias="TestDO" type="cn.dynasty.zt.test.common.model.TestDO" />
 
 	</typeAliases>
 
-	<!--<mappers>
-		<mapper resource="mybatis/mapper/TestMapper.xml" />
-
-	</mappers>-->
 
 </configuration>  

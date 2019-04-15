@@ -23,6 +23,7 @@
         <module>test-server</module>
         <module>test-dao</module>
         <module>test-reception</module>
+        <module>test-common</module>
     </modules>
 <!-- ======= 子级项目 ======= -->
 

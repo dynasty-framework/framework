@@ -1,7 +1,6 @@
 package cn.dynasty.zt.test.reception.controller;
 
-import cn.dynasty.zt.portal.model.Hello;
-import cn.dynasty.zt.test.server.model.TestDO;
+import cn.dynasty.zt.test.common.model.TestDO;
 import cn.dynasty.zt.test.server.service.TestService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +23,6 @@ public class TestController {
     @ResponseBody
     public String getData(@RequestBody TestDO test) {
         return testService.getData(test);
-    }
-
-    @RequestMapping(value = "/sayHello", method = RequestMethod.POST)
-    @ResponseBody
-    public String sayHello(@RequestBody Hello hello) {
-        return testService.sayHello(hello);
     }
 
 
