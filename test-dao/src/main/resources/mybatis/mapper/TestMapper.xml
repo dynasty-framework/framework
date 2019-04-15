@@ -3,9 +3,9 @@
 <mapper namespace="cn.dynasty.zt.test.dao.mapper.TestMapper" >
 
 
-    <select id="getData" resultType="Test" parameterType="Test" >
+    <select id="findOne" resultType="Test" parameterType="Test" >
         select
-          real_name as msg
+          real_name as data
         from
           sys_user
         where

@@ -13,12 +13,12 @@ import javax.sql.DataSource;
  * @author: zhaotao
  * @create: 2019-04-14 13:55
  **/
-@Configuration
+//@Configuration
 public class DruidConfiguration {
 
-    @ConfigurationProperties(prefix = "spring.datasource")
+    /*@ConfigurationProperties(prefix = "spring.datasource")
     @Bean
     public DataSource druid() {
         return new DruidDataSource();
-    }
+    }*/
 }
