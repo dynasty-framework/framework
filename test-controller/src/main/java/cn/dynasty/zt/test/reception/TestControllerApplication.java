@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2019-04-14 16:06
  **/
 @SpringBootApplication
-public class TestReceptionApplication {
+public class TestControllerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TestReceptionApplication.class, args);
+        SpringApplication.run(TestControllerApplication.class, args);
     }
 }
