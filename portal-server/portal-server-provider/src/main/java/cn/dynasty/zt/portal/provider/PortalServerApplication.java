@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * @ClassName: PortalServerApplication
@@ -23,6 +24,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
      **/
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 //@MapperScan("cn.dynasty.zt.portal.provider.mapper")
+@ServletComponentScan//添加这个注解是为了扫描自定义servlet，但需要额外引入spring-boot-starter-web依赖，设置私有
 public class PortalServerApplication {
 
     public static void main(String[] args) {
