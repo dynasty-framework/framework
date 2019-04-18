@@ -38,6 +38,8 @@
 
 		<!--实体类别名-->
 		<typeAlias alias="TestDO" type="cn.dynasty.zt.test.common.model.TestDO" />
+		<typeAlias alias="User" type="cn.dynasty.zt.test.common.model.User" />
+
 
 	</typeAliases>
 

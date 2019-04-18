@@ -12,5 +12,19 @@
     </select>
 
 
+    <select id="insert" resultType="User" parameterType="User" >
+        INSERT INTO `framework`.`sys_user`(`user_uuid`, `real_name`, `nick_name`, `login_name`, `login_email`, `login_phone`, `current_password`, `salt`, `dept_uuid`,
+        `password_hints`, `is_change_password`, `disabled_time`, `disabled_reason`, `failed_logins`, `bind_login_ip`, `is_enabled`, `comments`, `is_deleted`,
+        `created_time`, `created_name`, `updated_time`, `updated_uuid`, `updated_name`, `org_uuid`, `app_sys_uuid`) VALUES
+        ('2', '真实姓名2', '昵称2', 'login_name2', 'login_email2', '13300000000', 'password', 'salt', 'dept_000001', NULL, 'Y', NULL, NULL, NULL, NULL, 'Y', NULL, 'N', NULL, NULL, '2019-04-18 09:13:17', NULL, NULL, 'org_000001', NULL);
+
+    </select>
+
+
+    <select id="insertRoleUser" resultType="User" parameterType="User" >
+        INSERT INTO `framework`.`sys_role_user`(`role_uuid`, `user_uuid`, `org_uuid`) VALUES ('ROLE_0001', 'USER_00001', 'ORG_0001');
+    </select>
+
+
 	
 </mapper>

@@ -57,4 +57,13 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 INSERT INTO `sys_user` VALUES ('1', '真实姓名', '昵称', 'login_name', 'login_email', 'login_phone', 'password', 'salt', 'dept_000001', NULL, 'Y', NULL, NULL, NULL, NULL, 'Y', NULL, 'N', NULL, NULL, '2019-04-18 09:13:17', NULL, NULL, 'org_000001', NULL);
 
+
+
+CREATE TABLE `sys_role_user`  (
+  `role_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '角色id',
+  `user_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '用户id',
+  `org_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '归属机构',
+  PRIMARY KEY (`role_uuid`, `user_uuid`, `org_uuid`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
 SET FOREIGN_KEY_CHECKS = 1;

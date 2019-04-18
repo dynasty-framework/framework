@@ -2,6 +2,7 @@ package cn.dynasty.zt.test.server.service;
 
 
 import cn.dynasty.zt.test.common.model.TestDO;
+import cn.dynasty.zt.test.common.model.User;
 
 /*
  * @Author zhaotao
@@ -13,5 +14,7 @@ import cn.dynasty.zt.test.common.model.TestDO;
 public interface TestService {
 
     TestDO getData(TestDO test);
+
+    Integer insertUser(User user);
 
 }
