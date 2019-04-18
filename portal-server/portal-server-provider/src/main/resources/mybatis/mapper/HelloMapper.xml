@@ -9,7 +9,7 @@
         from
           sys_user
         where
-          user_uuid = '10000_00005461'
+          user_uuid = '1'
     </select>
 
 	

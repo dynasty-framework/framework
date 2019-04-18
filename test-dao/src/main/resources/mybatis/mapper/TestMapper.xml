@@ -4,11 +4,11 @@
 
     <select id="findOne" resultType="TestDO" parameterType="TestDO" >
         select
-          real_name as data
+          real_name as `data`
         from
           sys_user
         where
-          user_uuid = '10000_00005461'
+          user_uuid = '1'
     </select>
 
 

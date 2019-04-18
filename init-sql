@@ -1,0 +1,60 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50530
+ Source Host           : localhost:3306
+ Source Schema         : framework
+
+ Target Server Type    : MySQL
+ Target Server Version : 50530
+ File Encoding         : 65001
+
+ Date: 18/04/2019 09:14:03
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for sys_user
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user`;
+CREATE TABLE `sys_user`  (
+  `user_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '主键',
+  `real_name` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '用户真实姓名',
+  `nick_name` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '昵称',
+  `login_name` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '系统登录名',
+  `login_email` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '登录邮箱',
+  `login_phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '登录手机',
+  `current_password` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '登录密码',
+  `salt` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '加密盐值',
+  `dept_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '所属部门',
+  `password_hints` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '密码提示',
+  `is_change_password` char(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '密码是Y否N要求修改，默认N',
+  `disabled_time` timestamp DEFAULT NULL COMMENT '禁用时间',
+  `disabled_reason` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '禁用原因',
+  `failed_logins` int(11) DEFAULT NULL COMMENT '登录失败次数',
+  `bind_login_ip` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '绑定登录ip',
+  `is_enabled` char(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Y' COMMENT '是否允许登录（Y启用N禁用）',
+  `comments` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注',
+  `is_deleted` char(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'N' COMMENT '删除标识（N正常Y删除）',
+  `created_time` timestamp DEFAULT NULL COMMENT '创建时间',
+  `created_name` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '创建人',
+  `updated_time` timestamp DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '最后一次更新时间',
+  `updated_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '更新人uuid',
+  `updated_name` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '更新人',
+  `org_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '归属机构id',
+  `app_sys_uuid` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '系统id',
+  PRIMARY KEY (`user_uuid`) USING BTREE,
+  UNIQUE INDEX `LOGIN_PHONE_INDEX`(`login_phone`) USING BTREE,
+  UNIQUE INDEX `LOGIN_EMAIL_INDEX`(`login_email`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci COMMENT = '登录用户信息' ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sys_user
+-- ----------------------------
+INSERT INTO `sys_user` VALUES ('1', '真实姓名', '昵称', 'login_name', 'login_email', 'login_phone', 'password', 'salt', 'dept_000001', NULL, 'Y', NULL, NULL, NULL, NULL, 'Y', NULL, 'N', NULL, NULL, '2019-04-18 09:13:17', NULL, NULL, 'org_000001', NULL);
+
+SET FOREIGN_KEY_CHECKS = 1;
