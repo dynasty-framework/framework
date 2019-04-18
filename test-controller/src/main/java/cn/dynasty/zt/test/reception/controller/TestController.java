@@ -21,7 +21,7 @@ public class TestController {
 
     @RequestMapping(value = "/getData", method = RequestMethod.POST)
     @ResponseBody
-    public String getData(@RequestBody TestDO test) {
+    public TestDO getData(@RequestBody TestDO test) {
         return testService.getData(test);
     }
 

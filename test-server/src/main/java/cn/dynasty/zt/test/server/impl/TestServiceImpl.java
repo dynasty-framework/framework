@@ -21,9 +21,9 @@ public class TestServiceImpl implements TestService {
 
 
     @Override
-    public String getData(TestDO test) {
+    public TestDO getData(TestDO test) {
         TestDO one = testDaoService.findOne(test);
-        return one.getData();
+        return one;
     }
 
 

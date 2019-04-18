@@ -9,7 +9,7 @@
         from
           sys_user
         where
-          user_uuid = '1'
+          user_uuid = #{msg}
     </select>
 
 	

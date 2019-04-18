@@ -12,6 +12,6 @@ import cn.dynasty.zt.test.common.model.TestDO;
  **/
 public interface TestService {
 
-    String getData(TestDO test);
+    TestDO getData(TestDO test);
 
 }

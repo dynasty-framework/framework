@@ -21,8 +21,8 @@ public class HelloServiceImpl implements HelloService {
 
 
     @Override
-    public String sayHello(Hello hello) {
+    public Hello sayHello(Hello hello) {
         Hello result = helloMapper.sayHello(hello);
-        return result.getMsg();
+        return result;
     }
 }

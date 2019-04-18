@@ -32,7 +32,7 @@ public class HelloController {
     /*@ResponseBody
         作用：
             该注解用于将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区。*/
-    public String sayHello(@RequestBody Hello hello) {
+    public Hello sayHello(@RequestBody Hello hello) {
         log.info("aaa");
         return helloService.sayHello(hello);
     }

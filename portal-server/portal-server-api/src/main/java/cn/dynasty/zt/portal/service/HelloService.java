@@ -5,6 +5,6 @@ import cn.dynasty.zt.portal.model.Hello;
 
 public interface HelloService {
 
-    String sayHello(Hello hello);
+    Hello sayHello(Hello hello);
 
 }
