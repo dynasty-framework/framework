@@ -25,6 +25,13 @@
             <optional>true</optional>
         </dependency>
 
+        <!--启动web项目需要引入该依赖,整合druid监控而添加-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!--Spring整合Dubbo的依赖-->
         <dependency>
             <groupId>com.alibaba.boot</groupId>
@@ -72,10 +79,17 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
         </dependency>
 
 

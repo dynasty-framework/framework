@@ -17,28 +17,28 @@ public class JdbcConfig {
     /**
      * 数据库连接池初始化大小
      */
-    @Value("${spring.datasource.druid.initial-size}")
+    @Value("${spring.datasource.initial-size}")
     private int initialSize;
 
 	 /**
      * 数据库用户名
      */
-    @Value("${spring.datasource.druid.username}")
+    @Value("${spring.datasource.username}")
     private String userName;
     /**
      * 驱动名称
      */
-    @Value("${spring.datasource.druid.driver-class-name}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClass;
     /**
      * 数据库连接url
      */
-    @Value("${spring.datasource.druid.url}")
+    @Value("${spring.datasource.url}")
     private String url;
     /**
      * 数据库密码
      */
-    @Value("${spring.datasource.druid.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
 
@@ -46,13 +46,13 @@ public class JdbcConfig {
     /**
      * 数据库连接池最小最小连接数
      */
-    @Value("${spring.datasource.druid.min-idle}")
+    @Value("${spring.datasource.min-idle}")
     private int minIdle;
 
     /**
      * 数据库连接池最大连接数
      */
-    @Value("${spring.datasource.druid.max-active}")
+    @Value("${spring.datasource.max-active}")
     private int maxActive;
 
 
