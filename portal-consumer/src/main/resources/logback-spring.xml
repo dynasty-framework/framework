@@ -144,6 +144,21 @@
         </filter>
     </appender>
 
+
+    <!--logback将日志信息输出到elk-->
+    <!--<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+         &lt;!&ndash;将日志输出到elk的地址和端口号&ndash;&gt;
+       <destination>localhost:9601</destination>
+       &lt;!&ndash; encoder必须配置,有多种可选 &ndash;&gt;
+       <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" >
+          &lt;!&ndash; "logName":"comba-community" 的作用是指定创建索引的名字时用，并且在生成的文档中会多了这个字段  &ndash;&gt;
+          <customFields>{"logName":"Dynasty_ZT"}</customFields>
+       </encoder>
+         <filter class="ch.qos.logback.classic.filter.LevelFilter">
+        <level>INFO</level>
+        </filter>
+    </appender>-->
+
     <!--
         <logger>用来设置某一个包或者具体的某一个类的日志打印级别、
         以及指定<appender>。<logger>仅有一个name属性，
@@ -172,7 +187,8 @@
 
     <!--开发环境:打印控制台-->
     <springProfile name="dev">
-        <logger name="cn.dynasty.zt.portal.consumer" level="debug"/>
+        <!-- additivity 避免执行2次 -->
+        <logger name="cn.dynasty.zt.portal.consumer" level="debug" additivity="false"/>
     </springProfile>
 
     <root level="info">
