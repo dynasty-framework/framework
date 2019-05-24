@@ -29,7 +29,6 @@ public class TestController {
     @HystrixCommand(fallbackMethod = "onError")//接口调用失败后，调用onError方法
     public Hello sayTest(@RequestBody Hello hello) {
         log.info("aaa");
-        hello.setMsg("sayTest");
         return helloService.sayHello(hello);
     }
 

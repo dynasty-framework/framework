@@ -39,3 +39,8 @@ framework项目简介：
                     dubbo能否注入一个没有实现类的接口？最终在test-dao服务加了一层service接口和实现类
 
             更新：will not be managed by Spring发现druid连接池创建连接未使用spring进行管理？？未解决，该问题是否没有使用druid连接池？有待验证
+
+
+
+            portal-hystrix是一个微服务监控服务，单hystrix只能监控一个服务下的运行情况，如果需要监控多个微服务需要使用turbine来实现；
+            portal-turbine是多个微服务监控服务，但目前服务启动报错java.lang.NoSuchMethodError: org.springframework.boot.builder.SpringApplicationBuilder.<init>([Ljava/lang/Object;)V

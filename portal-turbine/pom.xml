@@ -24,32 +24,56 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot.version}</version>
+            <version>2.1.0.RELEASE</version>
         </dependency>
+
 
         <!-- 引入关于 hystrix的依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-            <version>1.4.4.RELEASE</version>
         </dependency>
 
-        <!-- 引入关于 hystrix Dashboard的依赖 -->
+        <!-- 必须引入<version>2.0.1.RELEASE</version>版本号，否则@EnableHystrixDashboard无法导入-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
             <version>2.0.1.RELEASE</version>
         </dependency>
-        <!-- 引入关于 turbine 的依赖 -->
+
+        <!-- 引入关于 turbine 的依赖 由于使用zookeeper注册中心，所以要排除eureka的依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
             <version>1.4.7.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                    <groupId>org.springframework.cloud</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-cloud-starter</artifactId>
+                    <groupId>org.springframework.cloud</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
         <!--运行状态监控-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>1.5.18</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>1.5.18</version>
+            <scope>compile</scope>
         </dependency>
 
 
