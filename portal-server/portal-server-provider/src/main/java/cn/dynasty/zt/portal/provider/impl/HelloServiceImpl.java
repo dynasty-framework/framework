@@ -30,4 +30,12 @@ public class HelloServiceImpl implements HelloService {
         Hello result = helloMapper.sayHello(hello);
         return result;
     }
+
+
+    @Override
+    public Hello sayGoodbye(Hello hello) {
+        //int i = 1/0;
+        hello.setMsg("sayGoodbye");
+        return hello;
+    }
 }

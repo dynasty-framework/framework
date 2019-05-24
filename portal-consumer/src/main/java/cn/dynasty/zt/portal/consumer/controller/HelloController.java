@@ -45,9 +45,18 @@ public class HelloController {
      * fallback方法的返回值与原方法的返回值也要一致
      */
     public Hello onError(Hello hello) {
-        String msg = "Error!!!" + hello.toString();
+        String msg = "Error!!!" + hello.getMsg();
         hello.setMsg(msg);
         return hello;
+    }
+
+
+    @RequestMapping(value = "/sayGoodbye", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    @HystrixCommand(fallbackMethod = "onError")//接口调用失败后，调用onError方法
+    public Hello sayGoodbye(@RequestBody Hello hello) {
+        log.info("aaa");
+        return helloService.sayGoodbye(hello);
     }
 
 

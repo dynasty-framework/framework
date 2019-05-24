@@ -7,4 +7,6 @@ public interface HelloService {
 
     Hello sayHello(Hello hello);
 
+    Hello sayGoodbye(Hello hello);
+
 }
