@@ -4,6 +4,9 @@ import cn.dynasty.zt.portal.model.Hello;
 import cn.dynasty.zt.portal.provider.mapper.HelloMapper;
 import cn.dynasty.zt.portal.service.HelloService;
 import com.alibaba.dubbo.config.annotation.Service;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import org.apache.tomcat.jni.Thread;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -20,8 +23,10 @@ public class HelloServiceImpl implements HelloService {
     private HelloMapper helloMapper;
 
 
+    //@HystrixCommand
     @Override
     public Hello sayHello(Hello hello) {
+        //int i = 1/0;
         Hello result = helloMapper.sayHello(hello);
         return result;
     }

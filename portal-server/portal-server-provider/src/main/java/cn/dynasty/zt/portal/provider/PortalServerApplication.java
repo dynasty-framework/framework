@@ -1,10 +1,14 @@
 package cn.dynasty.zt.portal.provider;
 
+import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.Bean;
 
 /**
  * @ClassName: PortalServerApplication
@@ -30,4 +34,5 @@ public class PortalServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(PortalServerApplication.class, args);
     }
+
 }

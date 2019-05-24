@@ -24,6 +24,7 @@
         <module>test-dao</module>
         <module>test-controller</module>
         <module>test-common</module>
+        <module>portal-hystrix</module>
     </modules>
 <!-- ======= 子级项目 ======= -->
 
