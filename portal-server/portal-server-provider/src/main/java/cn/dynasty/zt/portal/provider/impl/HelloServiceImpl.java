@@ -26,7 +26,7 @@ public class HelloServiceImpl implements HelloService {
     //@HystrixCommand
     @Override
     public Hello sayHello(Hello hello) {
-        //int i = 1/0;
+        int i = 1/0;
         Hello result = helloMapper.sayHello(hello);
         return result;
     }
