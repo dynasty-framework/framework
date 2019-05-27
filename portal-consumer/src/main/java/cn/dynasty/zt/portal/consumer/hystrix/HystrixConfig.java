@@ -18,7 +18,8 @@ public class HystrixConfig {
     @Bean
     public ServletRegistrationBean hystrixMetricsStreamServlet() {
         ServletRegistrationBean registration = new ServletRegistrationBean(new HystrixMetricsStreamServlet());
-        registration.addUrlMappings("/hystrix.stream");
+        //这个要和turbine版本中的默认访问链接一致，不然还是无法访问的
+        registration.addUrlMappings("/actuator/hystrix.stream");
         return registration;
     }
 }
