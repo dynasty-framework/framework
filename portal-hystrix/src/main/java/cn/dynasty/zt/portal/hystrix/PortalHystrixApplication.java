@@ -7,12 +7,13 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 
 /**
  * @ClassName: PortalHystrixApplication
- * @description: TODO
+ * @description: hystrix微服务监控启动类
  * @author: zhaotao
  * @create: 2019-05-24 11:36
  **/
 @SpringBootApplication
-@EnableHystrixDashboard  //开启监控注解
+//开启监控图形化界面注解
+@EnableHystrixDashboard
 public class PortalHystrixApplication {
 
     public static void main(String[] args) {
